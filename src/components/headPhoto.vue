@@ -20,9 +20,10 @@ export default {
     }
   },
   created: function() {
-    let that = this;
-    that.headSrc = require('../assets/images/1.jpg');
-    that.userName = 'youzi';
+    // get user info
+    // let that = this;
+    this.headSrc = require('../assets/images/1.jpg');
+    this.userName = 'youzi';
   },
   methods: {
 
@@ -33,20 +34,26 @@ export default {
 <style type="text/css">
 #outer {
 	float: left;
-	margin-left: 10px;
+  /*width: 90%;*/
+	margin-left: 5%;
 	margin-top: 10px;
+  margin-bottom: 5px;
+  /*border: 1px solid #eee;*/
 }
 img {
 	height: 50px;
-	widows: 50px;
+	width: 50px;
 	vertical-align: middle;
+  /*padding-left: 10px;*/
+  /*display: inline-block;*/
 	border-radius: 5px;
 }
 p {
-	margin-left: 15px;
 	display: inline-block;
-	/* text-align: center; */
-	vertical-align: middle;
+  margin-left: 20px;
+	 /*text-align: center; */
+   /*vertical-align: middle;*/
+   font-size: 20px;
 }
 
 </style>
