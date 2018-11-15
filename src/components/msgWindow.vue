@@ -41,14 +41,16 @@ export default {
 }
 
 </script>
-<style lang="less">
+<style lang="less" scoped>
 li {
 	list-style: none;
 }
 .message {
     padding: 10px 15px;
     overflow-y: scroll;
-	/*height: 70%;*/
+	height: 65%;
+    /* border-radius: 0 5px 0 0; */
+    border-top-right-radius: 5px;
 	/*border-bottom: 1px solid #eee;*/
 	background-color: #eee;
     li {

@@ -1,7 +1,7 @@
 <template>
     <div id="chatWindow">
-        <msgWindow></msgWindow>
-        <inputWindow></inputWindow>
+        <msgWindow class="msgWindow"></msgWindow>
+        <inputWindow class="inputWindow"></inputWindow>
     </div>
 </template>
 <script type="text/javascript">
@@ -31,9 +31,19 @@ export default {
         /*box-sizing: border-box;*/
 		border: 1px solid #eee;
 		border-radius: 0 5px 5px 0;
+        box-sizing: border-box;
 		width: 70%;
 		height: 100%;
 		float: right;
 		margin-left: -5px;
+        /*overflow: hidden;*/
 	}
+    /*.msgWindow {
+        height: 65%;
+        width: 99%;
+    }
+    .inputWindow {
+        height: 30%;
+        width: 99%;
+    }*/
 </style>
