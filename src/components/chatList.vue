@@ -1,13 +1,13 @@
 <template>
 	<div id="chatlist">
-		<button id="chatBtn" v-for="chatter in chatters" :key="chatter.userid" :class=" {active: currentID === chatter.userid} " @click="selectChatter(chatter.userid)">
+		<button id="chatBtn" v-for="chatter in chatters" :key="chatter.userid" :class=" {active: currentID === chatter.userid} " @click="selectChatter(chatter.userid, chatter.message)">
 			<img class="img" :src="chatter.head">
 			<p class="p"> {{ chatter.name }} </p>
 		</button>
 	</div>
 </template>
 <script type="text/javascript">
-// import name from 'name'
+import Bus from './Bus.js'
 export default {
 	name: 'chatList',
 	components: {
@@ -16,7 +16,7 @@ export default {
 	data() {
 		return {
 			chatters: [],
-			currentID: 1,
+			currentID: null,
 		}
 	},
 	created: function() {
@@ -24,19 +24,33 @@ export default {
 		let firstUser = {
 			userid: 1,
 			name: 'ayou',
-			head: require('../assets/images/2.png')
+			head: require('../assets/images/2.png'),
+			message: [{
+				content: '1st test msg',
+				sendTime: new Date(),
+			}]
 		}
 		let secondUser = {
 			userid: 2,
 			name: 'ayou',
-			head: require('../assets/images/3.jpg')
+			head: require('../assets/images/3.jpg'),
+			message: [{
+					content: '2nd test msg',
+					sendTime: new Date(),
+				},
+				{
+					content: '3rd test msg',
+					sendTime: new Date(),
+				}
+			]
 		}
 		this.chatters.push(firstUser);
 		this.chatters.push(secondUser);
 	},
 	methods: {
-		selectChatter: function (userid) {
+		selectChatter: function(userid, message) {
 			this.currentID = userid;
+			Bus.$emit('currentMsg', userid, message);
 		}
 	}
 }
@@ -52,12 +66,15 @@ button {
 	background-color: rgba(0, 0, 0, 0);
 	/*font-size: 1em;*/
 }
+
 button:hover {
 	background-color: rgba(255, 255, 255, 0.03);
 }
+
 button.active {
 	background-color: rgba(255, 255, 255, 0.1);
 }
+
 .img {
 	/*margin-top: 10px;*/
 	margin-left: 5%;

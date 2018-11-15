@@ -30,8 +30,11 @@ export default {
 </script>
 <style type="text/css">
 #listBar {
-  border: solid 1px #eee;
-  overflow: hidden;
+  /*border: solid 1px #eee;*/
+  /*overflow: hidden;*/
+  /*display: inline-block;*/
+  float: left;
+  box-sizing: border-box;
   height: 100%;
   width: 30%;
   background-color: rgba(46, 50, 56, 0.8);
