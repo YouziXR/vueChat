@@ -38,12 +38,13 @@ export default {
 		margin-left: -5px;
         /*overflow: hidden;*/
 	}
-    /*.msgWindow {
+    /* .msgWindow {
         height: 65%;
         width: 99%;
-    }
+    } */
     .inputWindow {
-        height: 30%;
-        width: 99%;
-    }*/
+        /*height: 30%;*/
+        /*width: 99%;*/
+        box-sizing: border-box;
+    }
 </style>

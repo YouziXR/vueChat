@@ -20,10 +20,10 @@ textarea {
 	/* height: 30%; */
 	border-bottom-right-radius: 4px; 
 	background-color: #fff;
-	/* padding: 10px; */
+	 padding: 10px; 
 	/* padding-left: 10px; */
 	height: 30%;
-	width: 99%;
+	width: 100%;
 	/* margin: 90px; */
 	margin-left: -1px;
 	border-top: none;
@@ -31,7 +31,7 @@ textarea {
 	border-right: 3px solid #fff;
 	border-bottom:5px solid #fff;
 	outline: none;
-	font-family: "Micrsofot Yahei";
+	font-family: "Microsoft Yahei";
 	resize: none;
 }
 

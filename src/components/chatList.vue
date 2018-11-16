@@ -1,6 +1,6 @@
 <template>
 	<div id="chatlist">
-		<button id="chatBtn" v-for="chatter in chatters" :key="chatter.userid" :class=" {active: currentID === chatter.userid} " @click="selectChatter(chatter.userid, chatter.message)">
+		<button id="chatBtn" v-for="chatter in chatters" :key="chatter.userid" :class=" {active: currentID === chatter.userid} " @click="selectChatter(chatter.userid, chatter.head, chatter.message)">
 			<img class="img" :src="chatter.head">
 			<p class="p"> {{ chatter.name }} </p>
 		</button>
@@ -48,9 +48,9 @@ export default {
 		this.chatters.push(secondUser);
 	},
 	methods: {
-		selectChatter: function(userid, message) {
+		selectChatter: function(userid, head, message) {
 			this.currentID = userid;
-			Bus.$emit('currentMsg', userid, message);
+			Bus.$emit('currentMsg', head, message);
 		}
 	}
 }
@@ -64,6 +64,7 @@ button {
 	width: 100%;
 	outline: none;
 	background-color: rgba(0, 0, 0, 0);
+	/*opacity: 0;*/
 	/*font-size: 1em;*/
 }
 
